@@ -10,8 +10,8 @@ app.use(bodyParser.urlencoded())
 
 const port = process.env.PORT || 3000
 
-app.get('/', async (request, response) => {
-  response.render('index')
+app.get('/', async(request, response) => {
+  await response.render('index')
 })
 
 app.use('/categorias', categorias)
