@@ -1,0 +1,44 @@
+<%- include('../header') %>
+
+<br>
+
+<table class="table table-hover" style="border: 2px solid #dee2e6">
+  <thead>
+    <tr>
+      <th scope="col">Publicação</th>
+      <th scope="col">Conteúdo</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% publicacoes.forEach(publicacao => { %>
+    <tr>
+      <td>
+        <%= publicacao.titulo %>
+      </td>
+      <td>
+        <%= publicacao.conteudo %>
+      </td>
+
+      <td>
+        <a class="btn btn-secondary" href="/publicacoes/editar/<%= categoria %>/<%= publicacao.id %>">Editar</a>
+        <a class="btn btn-danger" href="/publicacoes/excluir/<%= categoria %>/<%= publicacao.id %>">Exlcuir</a>
+      </td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+<a class="btn btn-primary" href="/publicacoes/nova">Nova Publicação</a>
+
+<!-- <h1>Publicações</h1>
+<a href="/publicacoes/nova">Nova Publicação</a><br><br>
+
+<% publicacoes.forEach(publicacao => { %>
+  <%= publicacao.titulo %><br>
+  <%= publicacao.conteudo %><br>
+  <a href="/publicacoes/editar/<%= publicacao.id %>">Editar</a><br>
+  <a href="/publicacoes/excluir/<%= publicacao.id %>">Excluir</a><br><br>
+<% }) %> -->
+
+<%- include('../footer') %>
