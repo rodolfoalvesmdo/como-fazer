@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
+
 const categorias = require('./routes/categorias')
 const publicacoes = require('./routes/publicacoes')
 
@@ -16,10 +17,9 @@ app.get('/', async (request, response) => {
 app.use('/categorias', categorias)
 app.use('/publicacoes', publicacoes)
 
-
 app.listen(port, (err) => {
   if(err) {
-    console.log(err)
+    console.log('error')
   } else {
     console.log('Como-fazer server is running on port:', port)
   }
